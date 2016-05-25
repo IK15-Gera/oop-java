@@ -1,10 +1,10 @@
 package de.benklett;
 
-import de.benklett.aufgabe2.Aufgabe2;
+import de.benklett.aufgabe5.Aufgabe5;
 
 public class Main {
 
     public static void main(String[] args) {
-        Aufgabe2.run(args);
+        Aufgabe5.run();
     }
 }
