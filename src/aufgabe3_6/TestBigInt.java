@@ -14,30 +14,18 @@ public class TestBigInt {
     }
 
     private static void testConstruction() {
-        Scanner sc = new Scanner(System.in);
-
-        System.out.println("Gib eine normale Ganzzahl ein:");
-        nums.add(new BigInt(sc.nextInt()));
-        System.out.println("Gib eine weitere große Ganzzahl ein:");
-        nums.add(new BigInt(sc.next()));
-
-        System.out.println("Die Zahlen wurde eingelesen.");
+        nums.add(new BigInt(45415451));
+        nums.add(new BigInt("44154558841588415415842554455"));
     }
 
     private static void testSet() {
-        Scanner sc = new Scanner(System.in);
-
         BigInt num = new BigInt(0);
-        System.out.println("Gib eine normale Ganzzahl ein:");
-        num.set(sc.nextInt());
+        num.set(145815);
         nums.add(num);
 
         num = new BigInt(0);
-        System.out.println("Gib eine weitere große Ganzzahl ein:");
-        num.set(sc.next());
+        num.set("145145481458812841565815588");
         nums.add(num);
-
-        System.out.println("Die Zahlen wurde eingelesen.");
     }
 
     private static void testAdd() {
