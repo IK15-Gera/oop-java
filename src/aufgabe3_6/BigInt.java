@@ -6,6 +6,10 @@ package aufgabe3_6;
 public class BigInt{
     String value ;
 
+    BigInt(BigInt v){
+        this.set(v) ;
+    }
+
     BigInt(int v){
         this.set(v) ;
     }
@@ -16,6 +20,10 @@ public class BigInt{
 
     public void set(int v){
         this.value = Integer.toString(v) ;
+    }
+
+    public void set(BigInt v){
+        this.value = v.get() ;
     }
 
     public void set(String v){
@@ -53,24 +61,25 @@ public class BigInt{
         int rest = 0 ;
         int step ;
         int len = Math.max(valb.length(), this.value.length()) ;
-        for(int i = 0; i < len; i++){
+        for(int i = 0; i < len || rest != 0; i++){
             try{
-                a = Integer.parseInt(""+this.value.charAt(i));
+                a = Integer.parseInt(""+this.value.charAt(this.value.length() - 1 - i));
             }catch(java.lang.IndexOutOfBoundsException e){
                 a = 0 ;
             }
 
             try{
-                b = Integer.parseInt(""+valb.charAt(i));
+                b = Integer.parseInt(""+valb.charAt(valb.length() - 1 - i));
             }catch(java.lang.IndexOutOfBoundsException e){
                 b = 0 ;
             }
 
             step = a + b + rest ;
-            rest = step % 10 ;
-            result = Integer.toString(step/10)+result ;
+            rest = step / 10 ;
+            result = Integer.toString(step%10)+result ;
         }
 
-        return new BigInt(result) ;
+        BigInt ret = new BigInt(result) ;
+        return ret ;
     }
 }
